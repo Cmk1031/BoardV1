@@ -1,3 +1,6 @@
+import common.BoardText;
+import common.ValidCheck;
+
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
@@ -10,7 +13,9 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class BoardDAO {
-    static Scanner input = new Scanner(System.in);
+
+    private static ValidCheck validCheck = new ValidCheck();
+
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     private static final String menuNumberRegex = "[1-4]";
     private static final String checkNumber = "[1-2]";
@@ -32,6 +37,7 @@ public class BoardDAO {
             list();
             Scanner input = new Scanner(System.in);
             String inputNumber = input.nextLine();
+            //validCheck.isMenuValid(inputNumber);
             if (inputNumber.equals("4")) {
                 System.out.println("\n게시판 종료");
                 break;
@@ -221,9 +227,8 @@ public class BoardDAO {
      */
     public void list() {
         Map<String, Board> boardMap = boardManager.getBoardMap();
-        System.out.println("\n[게시물 목록]");
-        System.out.println("-".repeat(60));
-        //System.out.println("no\twriter\tdate\ttitle");
+        System.out.println(BoardText.HEADER.getText());
+        System.out.println(BoardText.BORDER_LINE.getText());
         System.out.printf("%-4s %-20s %-20s %-20s\n","no", "writer", "date", "title");
 
 
@@ -245,7 +250,7 @@ public class BoardDAO {
     }
 
     public void mainMenu() {
-        System.out.println("메인 메뉴: 1.Create | 2.Read | 3.Clear | 4.Exit");
-        System.out.print("메뉴 선택: ");
+        System.out.println(BoardText.MAIN_MENU.getText());
+        System.out.print(BoardText.MENU_SELECT.getText());
     }
 }
