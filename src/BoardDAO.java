@@ -44,9 +44,9 @@ public class BoardDAO {
             }
             if (inputNumber.matches(menuNumberRegex)) {
                 switch (inputNumber) {
-                    case "1": create(); break;
-                    case "2": read(); break;
-                    case "3": clear(); break;
+                    case "1" -> create();
+                    case "2" -> read();
+                    case "3" -> clear();
                 }
             } else {
                 System.out.println("[1-4]번 번호를 입력하세요.");
@@ -139,15 +139,15 @@ public class BoardDAO {
      */
     public void readOption(int bno) {
         Scanner input = new Scanner(System.in);
-        System.out.println("보조 메뉴: 1.Update | 2. Delete | 3.List");
-        System.out.print("메뉴 선택: ");
+        System.out.println(BoardText.READ_CHECK_MENU.getText());
+        System.out.print(BoardText.MENU_SELECT.getText());
         while(true) {
             String numberInput = input.nextLine();
             if(numberInput.matches(readOptionRegex)) {
                 switch (numberInput) {
-                    case "1": update(bno);break;
-                    case "2": delete(bno);break;
-                    case "3": run();break;
+                    case "1" -> update(bno);
+                    case "2" -> delete(bno);
+                    case "3"-> run();
                 }
                 break;
             } else {

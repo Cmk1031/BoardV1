@@ -18,6 +18,8 @@ public enum BoardText {
     READ_LINE("#".repeat(30)),
     CHECK_MENU("보조 메뉴: 1.OK | 2. Cancel"),
 
+    READ_CHECK_MENU("보조 메뉴: 1.Update | 2. Delete | 3.List"),
+
 
     private final String text;
 
