@@ -8,6 +8,8 @@ public class BoardMain {
         BoardManager boardManager = new BoardManager();
         BoardDAO board = new BoardDAO(boardManager);
         board.run();
+
+
     }
 
 }
