@@ -6,7 +6,11 @@ public enum BoardText {
     //임시
     //BOARD_TITLE("%-4s %-20s %-20s %-20s\n","no", "writer", "date", "title");
     MAIN_MENU("메인 메뉴: 1.Create | 2.Read | 3.Clear | 4.Exit"),
-    MENU_SELECT("메뉴 선택: ");
+    MENU_SELECT("메뉴 선택: "),
+    CREATE("\n[새 게시물 입력]"),
+    MENU1("제목: "),
+    MENU2("내용: "),
+    MENU3("작성자: ");
 
     private final String text;
 

@@ -76,13 +76,12 @@ public class BoardDAO {
      */
     public void create() {
         Scanner input = new Scanner(System.in);
-        System.out.println();
-        System.out.println("[새 게시물 입력]");
-        System.out.print("제목: ");
+        System.out.println(BoardText.CREATE.getText());
+        System.out.print(BoardText.MENU1.getText());
         String title = input.nextLine();
-        System.out.print("내용: ");
+        System.out.print(BoardText.MENU2.getText());
         String content = input.nextLine();
-        System.out.print("작성자: ");
+        System.out.print(BoardText.MENU3.getText());
         String writer = input.nextLine();
         //1번 입력하면
         if (checkMenu()) {
