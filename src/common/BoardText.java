@@ -8,20 +8,16 @@ public enum BoardText {
     MAIN_MENU("메인 메뉴: 1.Create | 2.Read | 3.Clear | 4.Exit"),
     MENU_SELECT("메뉴 선택: "),
     CREATE("\n[새 게시물 입력]"),
-    MENU1("제목: "),
-    MENU2("내용: "),
-    MENU3("작성자: "),
     READ("\n[게시물 읽기]"),
-
     READ_NUMBER("bno: "),
-
-    READ_BNO("번호: "),
-    READ_TITLE("제목: "),
-    READ_BOARD("내용: "),
-    READ_WRITER("작성자: "),
-    READ_DATE("날짜: "),
-
+    BNO("번호: "),
+    TITLE("제목: "),
+    BOARD("내용: "),
+    WRITER("작성자: "),
+    DATE("날짜: "),
     READ_LINE("#".repeat(30)),
+    CHECK_MENU("보조 메뉴: 1.OK | 2. Cancel"),
+
 
     private final String text;
 

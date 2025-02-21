@@ -59,8 +59,8 @@ public class BoardDAO {
      */
     public boolean checkMenu() {
         Scanner input = new Scanner(System.in);
-        System.out.println("보조 메뉴: 1.OK | 2. Cancel");
-        System.out.print("메뉴 선택: ");
+        System.out.println(BoardText.CHECK_MENU.getText());
+        System.out.print(BoardText.MENU_SELECT.getText());
         while (true) {
             String inputNumber = input.nextLine();
             if (inputNumber.matches(checkNumber)) {
@@ -77,11 +77,11 @@ public class BoardDAO {
     public void create() {
         Scanner input = new Scanner(System.in);
         System.out.println(BoardText.CREATE.getText());
-        System.out.print(BoardText.MENU1.getText());
+        System.out.print(BoardText.TITLE.getText());
         String title = input.nextLine();
-        System.out.print(BoardText.MENU2.getText());
+        System.out.print(BoardText.BOARD.getText());
         String content = input.nextLine();
-        System.out.print(BoardText.MENU3.getText());
+        System.out.print(BoardText.WRITER.getText());
         String writer = input.nextLine();
         //1번 입력하면
         if (checkMenu()) {
@@ -116,11 +116,11 @@ public class BoardDAO {
                     Map<String, Board> boardMap = boardManager.getBoardMap();
                     System.out.println(BoardText.READ_LINE.getText());
                     Board board = boardMap.get(String.valueOf(numberInput));
-                    System.out.println(BoardText.READ_BNO.getText()+ board.getBno());
-                    System.out.println(BoardText.READ_TITLE.getText()+ board.getTitle());
-                    System.out.println(BoardText.READ_BOARD.getText() + board.getContent());
-                    System.out.println(BoardText.READ_WRITER.getText()+ board.getWriter());
-                    System.out.println(BoardText.READ_DATE.getText()+ dateFormat.format(board.getDate()));
+                    System.out.println(BoardText.BNO.getText()+ board.getBno());
+                    System.out.println(BoardText.TITLE.getText()+ board.getTitle());
+                    System.out.println(BoardText.BOARD.getText() + board.getContent());
+                    System.out.println(BoardText.WRITER.getText()+ board.getWriter());
+                    System.out.println(BoardText.DATE.getText()+ dateFormat.format(board.getDate()));
                     System.out.println(BoardText.READ_LINE.getText());
                     readOption(numberInput);
                     break;
