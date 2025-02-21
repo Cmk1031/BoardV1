@@ -103,26 +103,25 @@ public class BoardDAO {
         read(): 게시물 읽기 메소드
      */
     public void read() {
-        System.out.println();
         Scanner input = new Scanner(System.in);
-        System.out.println("[게시물 읽기]");
+        System.out.println(BoardText.READ.getText());
         int numberInput = 0;
         while (true) {
             try {
-                System.out.print("bno: ");
+                System.out.print(BoardText.READ_NUMBER);
                 numberInput = input.nextInt();
                 if (numberInput < 0 || numberInput > boardManager.getBoardSize()) {
                     throw new IllegalArgumentException("해당 게시물은 존재하지 않습니다.");
                 } else {
                     Map<String, Board> boardMap = boardManager.getBoardMap();
-                    System.out.println("#".repeat(30));
+                    System.out.println(BoardText.READ_LINE.getText());
                     Board board = boardMap.get(String.valueOf(numberInput));
-                    System.out.println("번호: "+ board.getBno());
-                    System.out.println("제목: "+ board.getTitle());
-                    System.out.println("내용: " + board.getContent());
-                    System.out.println("작성자: "+ board.getWriter());
-                    System.out.println("날짜: "+ dateFormat.format(board.getDate()));
-                    System.out.println("-".repeat(30));
+                    System.out.println(BoardText.READ_BNO.getText()+ board.getBno());
+                    System.out.println(BoardText.READ_TITLE.getText()+ board.getTitle());
+                    System.out.println(BoardText.READ_BOARD.getText() + board.getContent());
+                    System.out.println(BoardText.READ_WRITER.getText()+ board.getWriter());
+                    System.out.println(BoardText.READ_DATE.getText()+ dateFormat.format(board.getDate()));
+                    System.out.println(BoardText.READ_LINE.getText());
                     readOption(numberInput);
                     break;
                 }
