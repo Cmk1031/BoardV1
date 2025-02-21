@@ -14,15 +14,9 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class BoardDAO {
-
     private static ValidCheck validCheck = new ValidCheck();
-
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    private static final String menuNumberRegex = "[1-4]";
-    private static final String checkNumber = "[1-2]";
-    private static final String readOptionRegex = "[1-3]";
     private static int size = 1;
-
     BoardManager boardManager;
 
     public BoardDAO(BoardManager boardManager) {
@@ -211,7 +205,6 @@ public class BoardDAO {
         System.out.println(BoardText.BORDER_LINE.getText());
         System.out.printf("%-4s %-20s %-20s %-20s\n", "no", "writer", "date", "title");
 
-
         List<Map.Entry<String, Board>> entryList = new LinkedList<>(boardMap.entrySet());
         Collections.reverse(entryList);
 
@@ -220,7 +213,7 @@ public class BoardDAO {
             //System.out.println(value.getBno() + "\t" + value.getWriter() + "\t" + dateFormat.format(value.getDate()) + "\t" + value.getTitle());
             System.out.printf("%-4d %-20s %-20s %-20s\n", value.getBno(), value.getWriter(), dateFormat.format(value.getDate()), value.getTitle());
         });
-        System.out.println("-".repeat(60));
+        System.out.println(BoardText.BORDER_LINE.getText());
 
         /*boardMap.forEach((key, value) -> {
             System.out.println(value.getBno() + value.getWriter() + " " + value.getDate() + " " + value.getTitle());

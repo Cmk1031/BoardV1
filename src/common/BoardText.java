@@ -23,9 +23,7 @@ public enum BoardText {
 
     READ_CHECK_MENU("보조 메뉴: 1.Update | 2. Delete | 3.List");
 
-
     private final String text;
-
 
     BoardText(String text) {
         this.text = text;

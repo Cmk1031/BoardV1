@@ -1,7 +1,11 @@
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import common.ValidCheck;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 
 /*
     게시판 DTO
