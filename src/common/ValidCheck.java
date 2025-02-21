@@ -3,10 +3,10 @@ package common;
 import exception.BoardException;
 
 public class ValidCheck {
-    private static final String MENU_NUMBER = "^[1-4]";
-    private static final String CHECK_MENU_NUMBER = "^[1-2]";
+    private static final String MENU_NUMBER = "^[1-4]$";
+    private static final String CHECK_MENU_NUMBER = "^[1-2]$";
     private static final String CHECK_NUMBER = "^[0-9]*$";
-    private static final String READ_OPTION_NUMBER = "^[1-3]";
+    private static final String READ_OPTION_NUMBER = "^[1-3]$";
 
     //메인 메뉴 1-4번 유효 검사
     public void isMenuValid(String menu) {
@@ -25,6 +25,10 @@ public class ValidCheck {
     // 2번 예외 처리
     public void isValidBoardNumber(String number, int boardSize) {
         // read 입력값이 숫자가 아닌 경우
+        if(number.isEmpty()) {
+            throw new BoardException(ErrorCode.INVALID_EMPTY);
+        }
+
         if(!(number.matches(CHECK_NUMBER))) {
             throw new BoardException(ErrorCode.INVALID_CHECK_NUMBER);
         }

@@ -8,7 +8,9 @@ public enum ErrorCode {
 
    INVALID_CHECK_NUMBER("게시판 숫자 번호를 입력하세요!"),
 
-    INVALID_BOARD_NUMBER("해당 게시물은 존재하지 않습니다.");
+    INVALID_BOARD_NUMBER("해당 게시물은 존재하지 않습니다."),
+
+    INVALID_EMPTY("게시물 번호를 입력하세요.");
 
    private String msg;
 
