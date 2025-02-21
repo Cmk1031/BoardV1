@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
-public class BoardExample {
+public class BoardDAO {
     static Scanner input = new Scanner(System.in);
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     private static final String menuNumberRegex = "[1-4]";
@@ -19,7 +19,7 @@ public class BoardExample {
 
     BoardManager boardManager;
 
-    public BoardExample(BoardManager boardManager) {
+    public BoardDAO(BoardManager boardManager) {
         this.boardManager = boardManager;
     }
 

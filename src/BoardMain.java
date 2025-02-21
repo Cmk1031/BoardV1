@@ -6,7 +6,7 @@ public class BoardMain {
 
          */
         BoardManager boardManager = new BoardManager();
-        BoardExample board = new BoardExample(boardManager);
+        BoardDAO board = new BoardDAO(boardManager);
         board.run();
     }
 
